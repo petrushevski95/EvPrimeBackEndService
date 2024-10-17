@@ -6,21 +6,19 @@
 **AND** the body sent request is like this:     
 ```json
 {
-    	"email": "email value",	
-    	"password": "password value"
+    "email": "email value",	
+    "password": "password value"
 }
 ```
 **WHEN** the server response is status code 201Created    
 **THEN** server responds back with body result like this:    
 ```json
 {
-    	"message": "User created.",
-    	"user": {
+    "message": "User created.",
+    "user": {
         "id": "id value",
         "email": "email value"
     },
-    	"token": "token value"
-}
 ```
 
 
@@ -29,15 +27,15 @@
 **AND** the body sent request is like this:  
 ```json
 {
-    	"email": "email value",	(invalid email)
-    	"password": "password value"
+    "email": "email value",(invalid email)
+    "password": "password value"
 }
 ```
 **WHEN** the server response is status code 422 Unprocessable Entity    
 **THEN** server responds back with body result like this:
 ```json
 {
-   	"message": "User signup failed due to validation errors.",
+	"message": "User signup failed due to validation errors.",
     	"errors": {
        		 "email": "Invalid email."
     }
@@ -51,8 +49,8 @@
 **AND** the body sent request is like this:
 ```json
 {
-    	"email": "email value",	(existing email)
-    	"password": "password value"
+    "email": "email value",(invalid email)
+    "password": "password value"
 }
 ```
 **WHEN** the server response is status code 422 Unprocessable Entity     
@@ -60,8 +58,8 @@
 ```json
 {
    	"message": "User signup failed due to validation errors.",
-   	"errors": {
-        "email": "Email exists already."
+    	"errors": {
+       		 "email": "email exists already."
     }
 }
 ```
@@ -72,17 +70,17 @@
 **AND** the body sent request is like this:
 ```json
 {
-    	"email": "email value",	
-    	"password": "password value" (empty or short password value)
+    "email": "email value",(invalid email)
+    "password": "password value" (empty or short password value)
 }
 ```
 **WHEN** the server response is status code 422 Unprocessable Entity   
 **THEN** server responds back with body result like this:
 ```json
 {
-    "message": "User signup failed due to validation errors.",
-    "errors": {
-        "password": "Invalid password. Must be at least 6 characters long."
+   	"message": "User signup failed due to validation errors.",
+    	"errors": {
+       		 "password": "Invalid password. Must be at least 6 characters long."
     }
 }
 ```
@@ -94,16 +92,16 @@
 **AND** the body sent request is like this:    
 ```json
 {
-   	"email": "email value",	
-    	"password": "password value"
+    "email": "email value",	
+    "password": "password value"
 }
 ```
 **WHEN** the server response is status code 200OK  
 **THEN** server responds back with body result like this: 
 ```json
 {
-    	"token": "token value",
-    	"expirationTime": "expiration time value" (expiration time example: 2024-03-28T16:34:42.655Z)
+    "token": "token value",
+    "expirationTime": "expiration time value" (expiration time example: 2024-03-28T16:34:42.655Z)
 }
 ```
 
@@ -113,8 +111,8 @@
 **AND** the body sent request is like this:
 ```json
 {
-   	"email": "email value",	(invalid email fromat)
-    	"password": "password value"
+    "email": "email value",	(invalid email fromat)
+    "password": "password value"
 }
 ```
 **WHEN** the server response is status code 401 Unaothirized       
@@ -132,17 +130,17 @@
 **AND** the body sent request is like this:  
 ```json
 {
-   	"email": "email value",	
-    	"password": "password value" (invalid or empty password)
+    "email": "email value",	
+    "password": "password value" (invalid or empty password)
 }
 ```
 **WHEN** the server response is status code 422 Unprocessable Entity  
 **THEN** server responds back with body result like this  
 ```json
 {
-    	"message": "Invalid credentials.",
-   	"errors": {
-        "credentials": "Invalid email or password entered."
+   	"message": "Invalid credentials.",
+    	"errors": {
+       		 "credentials": "Invalid email or password entered."
     }
 }
 ```
@@ -238,7 +236,7 @@
 **THEN** server responds back with body result like this:   
 ```json
 {
-    	"message": "Adding the event failed due to validation errors.",
+	"message": "Adding the event failed due to validation errors.",
 	"errors": {
         	"title": "Invalid title."
     	}
@@ -263,10 +261,10 @@
 **THEN** server responds back with body result like this:    
 ```json
 {
-    "message": "Adding the event failed due to validation errors.",
-    "errors": {
-        "image": "Invalid image."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	"image": "Invalid image."
+    	}
 }
 ```
 
@@ -288,10 +286,10 @@
 **THEN** server responds back with body result like this:    
 ```json
 {
-    "message": "Adding the event failed due to validation errors.",
-    "errors": {
-        "date": "Invalid date."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	"date": "Invalid date."
+    	}
 }
 ```
 
@@ -313,10 +311,10 @@
 **THEN** server responds back with body result like this:    
 ```json
 {
-    "message": "Adding the event failed due to validation errors.",
-    "errors": {
-        "description": "Invalid location." 
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	"description": "Invalid location."
+    	}
 }
 ```
 
@@ -338,10 +336,10 @@
 **THEN** server responds back with body result like this:      
 ```json
 {
-    "message": "Adding the event failed due to validation errors.",
-    "errors": {
-        "description": "Invalid description."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	"description": "Invalid description."
+    	}
 }
 ```
 
@@ -365,7 +363,10 @@
 {
     "message": "Adding the event failed due to validation errors.",
     "errors": {
-        "description": "Invalid description."
+        "title": "Invalid title.",
+        "description": "Invalid location.", 
+        "date": "Invalid date.",
+        "image": "Invalid image."
     }
 }
 ```
@@ -430,10 +431,10 @@
 **THEN** server responds back with body result like this: 
 ```json
 {
-    "message": "Updating the event failed due to validation errors.",
-    "errors": {
-        "image": "Invalid image."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	 "image": "Invalid image."
+    	}
 }
 ```
 
@@ -455,10 +456,10 @@
 **THEN** server responds back with body result like this:    
 ```json
 {
-    "message": "Updating the event failed due to validation errors.",
-    "errors": {
-        "image": "Invalid image."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	 "image": "Invalid image."
+    	}
 }
 ```
 
@@ -479,10 +480,10 @@
 **THEN** server responds back with body result like this:   
 ```json
 {
-    "message": "Updating the event failed due to validation errors.",
-    "errors": {
-        "date": "Invalid date."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	 "date": "Invalid date."
+    	}
 }
 ```
 
@@ -504,10 +505,10 @@
 **THEN** server responds back with body result like this:  
 ```json
 {
-    "message": "Updating the event failed due to validation errors.",
-    "errors": {
-        "description": "Invalid location."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	 "description": "Invalid location."
+    	}
 }
 ```
 
@@ -528,10 +529,10 @@
 **THEN** server responds back with body result like this:
 ```json
 {
-    "message": "Updating the event failed due to validation errors.",
-    "errors": {
-        "description": "Invalid description."
-    }
+	"message": "Adding the event failed due to validation errors.",
+	"errors": {
+        	 "description": "Invalid description."
+    	}
 }
 ```
 
