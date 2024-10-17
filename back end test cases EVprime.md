@@ -750,8 +750,8 @@
     "description": "Barcelona clashed Real Mdrid with outstanding 5-0"
 }
 ```
-**WHEN** the server response is status 422 Unprocessable Entity
-**THEN** server responds back with body result like this:
+**WHEN** the server response is status 422 Unprocessable Entity    
+**THEN** server responds back with body result like this:    
 ```Json
 {
     "message": "Updating the event failed due to validation errors.",
