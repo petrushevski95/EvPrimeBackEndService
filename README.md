@@ -295,7 +295,7 @@
 **Response body (successful, status code: 200 OK):** 
 ```Json	
 	{
-    		 "message": "Successfully deleted the event with id: 1"
+    		 "message": "Successfully deleted the event with id: {id}"
 	}
 ```
 **Response body (unsuccessful: no authentication (missing token), status code: 401 Unauthorized):** 
