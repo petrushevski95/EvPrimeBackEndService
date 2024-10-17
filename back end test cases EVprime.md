@@ -733,9 +733,9 @@
     "description": "Real Madrid host Chelsea in the UEFA Champions League semi-final first leg on Tuesday 27 April at 21:00 CET."
 }
 ```
-**GIVEN** put request is sent to the endpoint (localhost:8080//events/bf5249a7-f4a9-482e-af40-8f496aed0b96)
-**AND** put request is sent to update an event with id "bf5249a7-f4a9-482e-af40-8f496aed0b96"
-**AND** "title" value is changed to "Barcelona vs Real Madrid"
+**GIVEN** put request is sent to the endpoint (localhost:8080//events/bf5249a7-f4a9-482e-af40-8f496aed0b96)     
+**AND** put request is sent to update an event with id "bf5249a7-f4a9-482e-af40-8f496aed0b96"    
+**AND** "title" value is changed to "Barcelona vs Real Madrid"    
 **AND** "image" value is changed to "https://www.google.com/search?q=barcelona+vs+real+madrid+5-0&sa=X&sca_esv=6449538529ffda2f&biw=1920&bih=919&sxsrf=ADLYWIK_1v0OQEu0PvCLW9HnS5alNJAL3Q:1728129238410&udm=2&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWfbQph1uib-VfD_izZO2Y5sC3UdQE5x8XNnxUO1qJLaRUGL3qWeTjomUBn_ET6Fuv_qSaM3rhwwsquyvDNiYf4AhvdBxGGsWflOn_SbrhPXYX5yM2t20jqoy2rNsk0mrBYfHYbJ0YV2cKhkr5ymbgfG1LLBFkDU7vvLETjiF9Gtx3xeMX&ved=2ahUKEwiTmYaLl_eIAxUkQ_EDHUGjJwsQtKgLegQIARAH#vhid=x2lrDEtUdViTaM&vssid=mosaic"      
 **AND** "date" value is changed to "19.11.2023"  
 **AND** "location" value is left empty ""  
