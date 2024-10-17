@@ -228,7 +228,7 @@
 	    	"description": "description value"
 	}
 ```
-**Response body (successful, status code: 201 Created): ** 
+**Response body (successful, status code: 201 Created):** 
 ```Json	
 	{
     		 "message": "Successfully updated the event with id: {id value}"
@@ -243,7 +243,7 @@
     		}
 	}
 ```
-**response body (unsuccessful: empty image or does not start with http, status code: 422 Unprocessable Entity):** 
+**Response body (unsuccessful: empty image or does not start with http, status code: 422 Unprocessable Entity):** 
 ```Json	
 	{
     		"message": "Updating the event failed due to validation errors.",
