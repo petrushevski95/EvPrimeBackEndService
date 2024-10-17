@@ -1,15 +1,18 @@
-TEST CASES:
+# EV PRIME BACK END SERVICE TEST CASES
 
 
-Test case 1: Successful sign up. (post request) (PASS)
-GIVEN post request is sent to the endpoint (localhost:8080/signup)
-AND the body sent request is like this:
+### Test case 1: Successful sign up. (post request) (PASS)
+**GIVEN** post request is sent to the endpoint (localhost:8080/signup)  
+**AND** the body sent request is like this:  
+```Json
 {
     	"email": "new_email@gmail.com",	
     	"password": "password123"
 }
-WHEN the server response is status code 201Created
-THEN server responds back with body result like this:
+```
+**WHEN** the server response is status code 201Created  
+**THEN** server responds back with body result like this:  
+```Json
 {
     	"message": "User created.",
     	"user": {
@@ -18,75 +21,90 @@ THEN server responds back with body result like this:
     },
     	"token": "{token value}"
 }
+```
 
 
-
-Test case 2: Unsuccessul sign up (invalid email format). (post request) (PASS)
-GIVEN post request is sent to the endpoint (localhost:8080/signup)
-AND the body sent request is like this:
+### Test case 2: Unsuccessul sign up (invalid email format). (post request) (PASS)
+**GIVEN** post request is sent to the endpoint (localhost:8080/signup)  
+**AND** the body sent request is like this:  
+```Json
 {
     	"email": "test1234mail.com",	
     	"password": "password123"
 }
-WHEN the server response is status code 422 Unprocessable Entity
-THEN server responds back with body result like this:
+```
+**WHEN** the server response is status code 422 Unprocessable Entity  
+**THEN** server responds back with body result like this:  
+```Json
 {
    	"message": "User signup failed due to validation errors.",
     	"errors": {
        		 "email": "Invalid email."
     }
 }
+```
 
 
-Test case 3: Unsuccessul sign up (missing email). (post request) (PASS) 
-GIVEN post request is sent to the endpoint (localhost:8080/signup)
-AND the body sent request is like this:
+### Test case 3: Unsuccessul sign up (missing email). (post request) (PASS) 
+**GIVEN** post request is sent to the endpoint (localhost:8080/signup)  
+**AND** the body sent request is like this:  
+```Json
 {
     	"email": "", 	
     	"password": "password123"
 }
-WHEN the server response is status code 422 Unprocessable Entity
-THEN server responds back with body result like this:
+```
+**WHEN** the server response is status code 422 Unprocessable Entity  
+**THEN** server responds back with body result like this:  
+```Json
 {
    	"message": "User signup failed due to validation errors.",
     	"errors": {
        		 "email": "Invalid email."
     }
 }
+```
 
 
-Test case 4: Unsuccessul sign up (existing email). (post request) (PASS)
-GIVEN post request is sent to the endpoint (localhost:8080/signup)
-AND the body sent request is like this:
+### Test case 4: Unsuccessul sign up (existing email). (post request) (PASS)
+**GIVEN** post request is sent to the endpoint (localhost:8080/signup)  
+**AND** the body sent request is like this: 
+```Json
 {
     	"email": "new_email@gmail.com",
     	"password": "password123"
 }
-WHEN the server response is status code 422 Unprocessable Entity
-THEN server responds back with body result like this:
+```
+**WHEN** the server response is status code 422 Unprocessable Entity  
+**THEN** server responds back with body result like this:  
+```Json
 {
    	"message": "User signup failed due to validation errors.",
    	"errors": {
         "email": "Email exists already."
     }
 }
+```
 
-
-Test case 5: Unsuccessul sign up (empty password). (post request) (PASS)
-GIVEN post request is sent to the endpoint (localhost:8080/signup)
-AND the body sent request is like this:
+### Test case 5: Unsuccessul sign up (empty password). (post request) (PASS)
+**GIVEN** post request is sent to the endpoint (localhost:8080/signup)   
+**AND** the body sent request is like this:  
+```Json
 {
     	"email": "new_test_email@gmail.com",	
     	"password": ""
 }
-WHEN the server response is status code 422 Unprocessable Entity
-THEN server responds back with body result like this:
+```
+**WHEN** the server response is status code 422 Unprocessable Entity  
+**THEN** server responds back with body result like this:
+```Json
 {
     "message": "User signup failed due to validation errors.",
     "errors": {
         "password": "Invalid password. Must be at least 6 characters long."
     }
 }
+```
 
 
 Test case 6: Unsuccessul sign up (short password "less than 6 characters"). (post request) (PASS)
